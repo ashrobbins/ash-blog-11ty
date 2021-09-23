@@ -6,9 +6,9 @@
 
   // Set theme aliases
   --color-mode: 'light';
-  --color-bg: #{get-color('light')};
+  --color-bg: #{get-color('dark')};
   --color-bg-glare: #{get-color('light')};
-  --color-text: #{get-color('dark')};
+  --color-text: #{get-color('light')};
   --color-text-glare: #{get-color('dark')};
   --color-selection-text: #{get-color('light')};
   --color-selection-bg: #{get-color('dark')};
