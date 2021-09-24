@@ -11,6 +11,39 @@
     &__item {
         display: flex;
         flex-direction: column;
+
+        &--css {
+
+            .tags {
+                border-color: var(--color-css);
+            }
+
+            #{$this}__link:hover {
+                color: var(--color-css);
+            }
+        }
+
+        &--js {
+
+            .tags {
+                border-color: var(--color-js);
+            }
+
+            #{$this}__link:hover {
+                color: var(--color-js);
+            }
+        }
+
+        &--rant {
+
+            .tags {
+                border-color: var(--color-rant);
+            }
+
+            #{$this}__link:hover {
+                color: var(--color-rant);
+            }
+        }
     }
 
     &__link {
