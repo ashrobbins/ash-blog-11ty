@@ -1,20 +1,25 @@
 {% if postListItems.length %}
-  <section class="[ post-list ] [ pad-top-700 gap-bottom-900 ]">
-    <div class="[ inner-wrapper ] [ sf-flow ]">
-      <ol class="[ post-list__items ] [ sf-flow ] [ pad-top-300 ]" reversed>
-        {% for item in postListItems %}
-          {% if item.date.getTime() <= global.now %}
-            <li class="post-list__item">
-              <h3 class="font-base leading-tight text-600 weight-mid">
-                <a href="{{ item.url }}" class="post-list__link" rel="bookmark">{{ item.data.title }}</a>
-              </h3>
-              <p class="text-500 gap-top-300 weight-mid">
-                <time datetime="{{ item.date | w3DateFilter }}">{{ item.date | dateFilter }}</time>
-              </p>
-            </li>
-          {% endif %}
-        {% endfor %}
-      </ol>
-    </div>
-  </section>
+    <section class="[ post-list ] [ pad-top-700 gap-bottom-900 ]">
+        <ol class="post-list__items wrapper">
+            {% for item in postListItems %}
+                {% if item.date.getTime() <= global.now %}
+                    <li class="post-list__item">
+                        {% if tags %}
+                            <ul class="tags">
+                                {% for tag in tags %}
+                                    <li class="tag tag--{{ tag }}">
+                                        <a href="/tag/{{ tag }}/">{{ tag }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                        <h3 class="heading heading--post-list">
+                            <a href="{{ item.url }}" class="post-list__link" rel="bookmark">{{ item.data.title }}</a>
+                        </h3>
+                        <span class="c-post__date">{{ item.date | dateFilter }}</span>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ol>
+    </section>
 {% endif %}

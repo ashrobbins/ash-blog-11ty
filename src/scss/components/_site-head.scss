@@ -1,7 +1,7 @@
-.site-head {
-  &__site-name {
-    font-weight: 700;
-    text-decoration: none;
-    color: var(--color-text);
-  }
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto 3rem;
+    padding: rem-calc(20 0);
 }

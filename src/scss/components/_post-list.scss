@@ -1,17 +1,20 @@
 .post-list {
-  &__item {
-    --flow-space: #{get-size(700)};
-  }
+    $this: &;
 
-  &__link {
-    &,
-    &:visited {
-      color: var(--color-theme-primary);
-      text-decoration: none;
+    &__items {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 4rem;
+        grid-column-gap: 6rem;
     }
 
-    &:hover {
-      text-decoration: underline;
+    &__item {
+        display: flex;
+        flex-direction: column;
     }
-  }
+
+    &__link {
+        color: var(--color-white);
+        text-decoration: none;
+    }
 }

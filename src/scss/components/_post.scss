@@ -1,9 +1,65 @@
 .post {
+
+    &__date {
+        font-size: 1.4rem;
+    }
+
+    &__meta {
+        display: flex;
+        margin-bottom: 4rem;
+        @include title-font-heavy;
+        font-size: 2rem;
+        border-bottom: 3px solid var(--color-primary);
+
+        &--css {
+            border-color: var(--color-css);
+        }
+
+        &--js {
+            border-color: var(--color-js);
+        }
+
+        &--rant {
+            border-color: var(--color-rant);
+        }
+
+        .c-post__date {
+            font-size: 14px;
+        }
+
+        .tags {
+            margin-right: 1.6rem;
+            margin-bottom: 0;
+            border: 0;
+            transform: skew(-12deg) translateX(3px);
+        }
+
+        .tag {
+            @include title-font-heavy;
+            font-size: 1.4rem;
+            font-style: normal;
+            line-height: 1.6rem;
+
+            a:hover {
+                text-decoration: none;
+            }
+        }
+
+        @media (max-width: 900px) {
+            margin-bottom: 2rem;
+            font-size: 1.6rem;
+        }
+
+        @media (max-width: 600px) {
+            font-size: 1.4rem;
+        }
+    }
+
   &__body {
     --flow-space: #{get-size(800)};
 
     /**
-     * Generic HTML styles 
+     * Generic HTML styles
      */
     h2 + *,
     h3 + * {
