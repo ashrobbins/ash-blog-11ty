@@ -4,9 +4,9 @@
             {% for item in postListItems %}
                 {% if item.date.getTime() <= global.now %}
                     <li class="post-list__item">
-                        {% if item.tags.length %}
+                        {% if item.data.tags %}
                             <ul class="tags {{ tags }}">
-                                {% for tag in item.tags %}
+                                {% for tag in item.data.tags %}
                                     <li class="tag tag--{{ tag }}">
                                         <a href="/tag/{{ tag }}/">{{ tag }}</a>
                                     </li>
