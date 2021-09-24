@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Ash Robbins
+title: Home
 postsHeading: Latest posts
 archiveButtonText: See all posts
 metaDesc:
