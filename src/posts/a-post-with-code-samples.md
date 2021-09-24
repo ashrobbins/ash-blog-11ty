@@ -1,7 +1,7 @@
 ---
 title: A post with code samples
 date: 2019-06-18
-tags: []
+tags:
 
 ---
 The best way to demo a code post is to display a real life post, so check out

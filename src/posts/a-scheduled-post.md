@@ -1,8 +1,7 @@
 ---
 title: A scheduled post
 date: 2021-07-14
-tags:
-- css
+tags: css
 
 ---
 This post is scheduled for the future, specifically mid-2022. Hopefully you're
