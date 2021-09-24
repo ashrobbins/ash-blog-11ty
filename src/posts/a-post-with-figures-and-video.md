@@ -2,6 +2,8 @@
 title: A post with figures and video
 date: 2019-06-18
 tags: []
+category:
+- rant
 
 ---
 A post to demonstrate how a blog post looks on Hylia. Content is all set in the
