@@ -1,7 +1,11 @@
 ---
 title: A simple post
 date: 2020-06-08
-tags: js
+tags:
+- js
+category:
+- css
+
 ---
 A simple post to demonstrate how a normal blog post looks on Hylia. Content is
 all set in the “Body” field as markdown and Eleventy transforms it into a proper
