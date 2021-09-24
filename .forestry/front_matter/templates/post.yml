@@ -12,9 +12,10 @@ fields:
   config:
     date_format: YYYY-MM-DD
     export_format: YYYY-MM-DD
-- type: list
-  name: tags
-  label: tags
+- name: category
+  type: tag_list
+  default: []
+  label: category
 - name: image
   type: file
   config:
