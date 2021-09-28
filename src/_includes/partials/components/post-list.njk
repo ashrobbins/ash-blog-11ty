@@ -4,19 +4,24 @@
             {% for item in postListItems %}
                 {% if item.date.getTime() <= global.now %}
                     <li class="post-list__item {% if item.data.tags %}{% for tag in item.data.tags %}post-list__item--{{ tag }}{% endfor %}{% endif %}">
-                        {% if item.data.tags %}
-                            <ul class="tags {% for tag in item.data.tags %}tags--{{ tag }}{% endfor %}">
-                                {% for tag in item.data.tags %}
-                                    <li class="tag tag--{{ tag }}">
-                                        <a href="/tag/{{ tag }}/">{{ tag }}</a>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        {% endif %}
+                        <div class="post__meta {% if item.data.tags %}{% for tag in item.data.tags %} post__meta--{{ tag }}{% endfor %}{% endif %}">
+                            {% if item.data.tags %}
+                                <ul class="tags">
+                                    {% for tag in item.data.tags %}
+                                        <li class="tag tag--{{ tag }}">
+                                            <a href="/tag/{{ tag }}/">{{ tag }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+
+                            <time class="c-post__date" datetime="{{ item.date | w3DateFilter }}" itemprop="datePublished">
+                                {{ item.date | dateFilter }}
+                            </time>
+                        </div>
                         <h3 class="heading heading--post-list">
                             <a href="{{ item.url }}" class="post-list__link" rel="bookmark">{{ item.data.title }}</a>
                         </h3>
-                        <span class="c-post__date">{{ item.date | dateFilter }}</span>
                     </li>
                 {% endif %}
             {% endfor %}

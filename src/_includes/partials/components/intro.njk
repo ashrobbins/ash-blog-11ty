@@ -1,8 +1,24 @@
-<header class="[ intro ] [ pad-top-900 pad-bottom-max ]">
-  <div class="[ inner-wrapper ] [ sf-flow ]">
-    <h1 class="[ intro__heading{{ ' intro__heading--compact' if page.url === '/' }} ] [ text-800 md:text-900 leading-tight ] [ p-name ]">{{ introHeading }}</h1>
-    {% if introSummary %}
-      <div class="[ intro__summary ] [ sf-flow ] [ leading-mid measure-short ]">{{ introSummary | safe }}</div>
-    {% endif %}
-  </div>
+<header class="[ intro ] [ pad-top-900 ]">
+    <div class="[ inner-wrapper ] [ sf-flow ]">
+        <div class="post__meta {% if tags %}{% for tag in tags %} post__meta--{{ tag }}{% endfor %}{% endif %}">
+            {% if tags %}
+                <ul class="tags">
+                    {% for tag in tags %}
+                        <li class="tag tag--{{ tag }}">
+                            <a href="/tag/{{ tag }}/">{{ tag }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            <time class="c-post__date" datetime="{{ page.date | w3DateFilter }}" itemprop="datePublished">
+                {{ date | dateFilter }}
+            </time>
+        </div>
+
+        <h1 class="[ intro__heading{{ ' intro__heading--compact' if page.url === '/' }} ] [ text-800 md:text-900 leading-tight ] [ p-name ]">{{ introHeading }}</h1>
+        {% if introSummary %}
+            <div class="[ intro__summary ] [ sf-flow ] [ leading-mid measure-short ]">{{ introSummary | safe }}</div>
+        {% endif %}
+    </div>
 </header>

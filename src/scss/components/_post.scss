@@ -5,7 +5,6 @@
 
     &__meta {
         display: flex;
-        margin-bottom: 4rem;
         @include title-font-heavy;
         font-size: 2rem;
         border-bottom: 3px solid var(--color-primary);
