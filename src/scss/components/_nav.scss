@@ -1,34 +1,35 @@
 .nav {
-  &__list {
-    overflow-x: auto;
+    &__list {
+        overflow-x: auto;
 
-    // Add padding and neg margin to allow focus style visibility
-    padding: 0.5rem;
-    margin: -0.5rem;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: none;
+        // Add padding and neg margin to allow focus style visibility
+        padding: 0.5rem;
+        margin: -0.5rem;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: none;
 
-    &::-webkit-scrollbar {
-      display: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        > * + * {
+            margin-left: get-size(500);
+        }
     }
 
-    > * + * {
-      margin-left: get-size(500);
+    &__item {
+        padding: get-size(300) 0;
+        flex-shrink: 0;
+
+        a {
+            color: currentColor;
+            @include title-font-black;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            &:hover {
+                color: var(--color-primary);
+            }
+        }
     }
-  }
-
-  &__item {
-    padding: get-size(300) 0;
-    flex-shrink: 0;
-
-    a {
-      color: currentColor;
-
-      @include apply-utility('weight', 'regular');
-
-      &:not(:hover) {
-        text-decoration: none;
-      }
-    }
-  }
 }

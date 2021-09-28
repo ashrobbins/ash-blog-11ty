@@ -48,15 +48,15 @@ module.exports = function(config) {
 
   config.addCollection('postFeed', collection => {
     return [...collection.getFilteredByGlob('./src/posts/*.md').filter(livePosts)]
-      .reverse()
-      .slice(0, site.maxPostsPerPage);
+      .reverse();
+      // .slice(0, site.maxPostsPerPage);
   });
 
   // Plugins
   config.addPlugin(rssPlugin);
   config.addPlugin(syntaxHighlight);
-  
-  /* Forestry instant previews 
+
+  /* Forestry instant previews
   if( process.env.ELEVENTY_ENV == "staging" ) {
     eleventyConfig.setBrowserSyncConfig({
       host: "0.0.0.0"
